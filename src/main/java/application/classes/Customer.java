@@ -3,11 +3,14 @@ package application.classes;
 public class Customer {
     private String firstName;
     private String lastName;
-    private String addressStreet;
-    private String addressNumber;
-    private String addressPostalCode;
+    private String city;
+    private String addStreet;
+    private String addNumber;
+    private String addPostalCode;
+    private String phoneNumber;
+    private String email;
+    private String dateOfBirth;
     private int customerNumber;
-    private String rentedVehicle;
 
     public String getFirstName() {
         return firstName;
@@ -25,28 +28,60 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public String getAddressStreet() {
-        return addressStreet;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddressStreet(String addressStreet) {
-        this.addressStreet = addressStreet;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getAddressNumber() {
-        return addressNumber;
+    public String getAddStreet() {
+        return addStreet;
     }
 
-    public void setAddressNumber(String addressNumber) {
-        this.addressNumber = addressNumber;
+    public void setAddStreet(String addStreet) {
+        this.addStreet = addStreet;
     }
 
-    public String getAddressPostalCode() {
-        return addressPostalCode;
+    public String getAddNumber() {
+        return addNumber;
     }
 
-    public void setAddressPostalCode(String addressPostalCode) {
-        this.addressPostalCode = addressPostalCode;
+    public void setAddNumber(String addNumber) {
+        this.addNumber = addNumber;
+    }
+
+    public String getAddPostalCode() {
+        return addPostalCode;
+    }
+
+    public void setAddPostalCode(String addPostalCode) {
+        this.addPostalCode = addPostalCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public int getCustomerNumber() {
@@ -55,13 +90,5 @@ public class Customer {
 
     public void setCustomerNumber(int customerNumber) {
         this.customerNumber = customerNumber;
-    }
-
-    public String getRentedVehicle() {
-        return rentedVehicle;
-    }
-
-    public void setRentedVehicle(String rentedVehicle) {
-        this.rentedVehicle = rentedVehicle;
     }
 }
