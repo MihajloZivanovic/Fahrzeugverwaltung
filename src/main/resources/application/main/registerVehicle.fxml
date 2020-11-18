@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.main.registerVehicle">
+   <children>
+      <Pane layoutX="382.0" layoutY="118.0" prefHeight="97.0" prefWidth="170.0" />
+      <FlowPane alignment="CENTER" prefHeight="32.0" prefWidth="600.0">
+         <children>
+            <JFXButton contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" style="-fx-border-color: black;" text="Fahrzeugregistration" />
+            <JFXButton contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" style="-fx-border-color: black;" text="Fahrzeugdatenmodifikation" />
+            <JFXButton contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" style="-fx-border-color: black;" text="Fahrzeugliste" />
+            <JFXButton contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" style="-fx-border-color: black;" text="Vermietungen" />
+         </children>
+      </FlowPane>
+      <Label layoutX="11.0" layoutY="45.0" prefHeight="45.0" prefWidth="239.0" text="Fahrzeug registrieren" />
+      <TextField layoutX="150.0" layoutY="139.0" />
+      <TextField layoutX="150.0" layoutY="165.0" />
+      <TextField layoutX="150.0" layoutY="191.0" />
+      <TextField layoutX="150.0" layoutY="295.0" />
+      <TextField layoutX="150.0" layoutY="269.0" />
+      <TextField layoutX="150.0" layoutY="243.0" />
+      <TextField layoutX="150.0" layoutY="217.0" />
+      <Label layoutX="22.0" layoutY="113.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="128.0" text="Marke" />
+      <Label layoutX="22.0" layoutY="139.0" prefHeight="26.0" prefWidth="128.0" text="Modell" />
+      <Label layoutX="22.0" layoutY="165.0" prefHeight="26.0" prefWidth="128.0" text="Hubraum (ccm)" />
+      <Label layoutX="22.0" layoutY="191.0" prefHeight="26.0" prefWidth="128.0" text="Treibstoffart" />
+      <Label layoutX="22.0" layoutY="217.0" prefHeight="26.0" prefWidth="128.0" text="Aussenfarbe" />
+      <Label layoutX="22.0" layoutY="243.0" prefHeight="26.0" prefWidth="128.0" text="Km-Stand" />
+      <Label layoutX="22.0" layoutY="269.0" prefHeight="26.0" prefWidth="128.0" text="Kennzeichen" />
+      <Label layoutX="22.0" layoutY="295.0" prefHeight="26.0" prefWidth="128.0" text="Kategorie" />
+      <TextField layoutX="150.0" layoutY="113.0" />
+   </children>
+</AnchorPane>
