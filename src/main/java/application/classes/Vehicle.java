@@ -3,7 +3,7 @@ package application.classes;
 public class Vehicle {
     private int vehicleId;
     private String vehicleBrand;
-    private String type;
+    private String model;
     private int ccm;
     private String fuelType;
     private String color;
@@ -28,12 +28,12 @@ public class Vehicle {
         this.vehicleBrand = vehicleBrand;
     }
 
-    public String getType() {
-        return type;
+    public String getModel() {
+        return model;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setModel(String type) {
+        this.model = type;
     }
 
     public int getCcm() {
