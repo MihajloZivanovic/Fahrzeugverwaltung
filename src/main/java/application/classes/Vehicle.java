@@ -1,24 +1,18 @@
 package application.classes;
 
 public class Vehicle {
-    private int vehicleId;
     private String vehicleBrand;
     private String model;
     private int ccm;
     private String fuelType;
     private String color;
     private int mileage;
-    private int licensePlate;
+    private String licensePlate;
     private String category;
     private String status;
+    private String availableFrom;
+    private String availableTill;
 
-    public int getVehicleId() {
-        return vehicleId;
-    }
-
-    public void setVehicleId(int vehicleId) {
-        this.vehicleId = vehicleId;
-    }
 
     public String getVehicleBrand() {
         return vehicleBrand;
@@ -68,11 +62,11 @@ public class Vehicle {
         this.mileage = mileage;
     }
 
-    public int getLicensePlate() {
+    public String getLicensePlate() {
         return licensePlate;
     }
 
-    public void setLicensePlate(int licensePlate) {
+    public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
 
@@ -90,5 +84,21 @@ public class Vehicle {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getAvailableFrom() {
+        return availableFrom;
+    }
+
+    public void setAvailableFrom(String readyFrom) {
+        this.availableFrom = readyFrom;
+    }
+
+    public String getAvailableTill() {
+        return availableTill;
+    }
+
+    public void setAvailableTill(String readyTill) {
+        this.availableTill = readyTill;
     }
 }
