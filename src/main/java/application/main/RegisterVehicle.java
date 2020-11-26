@@ -1,6 +1,7 @@
 package application.main;
 
 import application.classes.Vehicle;
+import application.classes.VehicleList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,9 +13,10 @@ import java.awt.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
-import java.util.Observable;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.List;
 
 import javafx.scene.control.*;
 import com.jfoenix.controls.*;
@@ -35,7 +37,8 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 public class RegisterVehicle implements Initializable {
 
     ObjectMapper objectMapper = new ObjectMapper();
-    Vehicle vehicle = new Vehicle();
+    String pathToFile = "vehicleList.json";
+    VehicleList list = new VehicleList();
 
     ObservableList<String> fuelTypeList = FXCollections.observableArrayList("Benzin", "Diesel", "Elektrisch");
     ObservableList<String> categoryList = FXCollections.observableArrayList("Basic", "Medium", "Luxus");
@@ -76,55 +79,63 @@ public class RegisterVehicle implements Initializable {
         categoryBox.setItems(categoryList);
         statusBox.setItems(statusList);
 
-        String stringReadyFrom = readyFrom.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        String stringReadyTill = readyTill.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        //String stringReadyFrom = readyFrom.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        //String stringReadyTill = readyTill.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
         //saves input to json, hopefully...  it jammers when an input field wasn't filled
-            save.setOnAction(new EventHandler<ActionEvent>() {
-                public void handle(ActionEvent event) {
-                    if(vehicleBrand.getText().equals("")
-                            || model.getText().equals("")
-                            || ccm.getText().equals("")
-                            || fuelTypeBox.getValue().equals("")
-                            || color.getText().equals("")
-                            || mileage.getText().equals("")
-                            || licensePlate.getText().equals("")
-                            || categoryBox.getValue().equals("")
-                            || statusBox.getValue().equals("")
-                    )
-                    {
-                        errorMessage.setText("Bitte jedes Feld ausfüllen!");
-                        errorMessage.setVisible(true);
-                    }else {
-                        errorMessage.setVisible(false);
+        save.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                if(vehicleBrand.getText().equals("")
+                        || model.getText().equals("")
+                        || ccm.getText().equals("")
+                        || fuelTypeBox.getValue().equals("")
+                        || color.getText().equals("")
+                        || mileage.getText().equals("")
+                        || licensePlate.getText().equals("")
+                        || categoryBox.getValue().equals("")
+                        || statusBox.getValue().equals("")
+                )
+                {
+                    errorMessage.setText("Bitte jedes Feld ausfüllen!");
+                    errorMessage.setVisible(true);
+                }else {
+                    errorMessage.setVisible(false);
 
-                        String ccmString = ccm.getText();
-                        String mileageString = mileage.getText();
+                    Map<>objectMapper.readValue(Paths.get(pathToFile).toFile(), List.class);
 
-                        int ccmConverted = Integer.parseInt(ccmString);
-                        int mileageConverted = Integer.parseInt(mileageString);
-                        vehicle.setVehicleBrand(vehicleBrand.getText());
-                        vehicle.setModel(model.getText());
-                        vehicle.setCcm(ccmConverted);
-                        vehicle.setFuelType(String.valueOf(fuelTypeBox.getValue()));
-                        vehicle.setColor(color.getText());
-                        vehicle.setMileage(mileageConverted);
-                        vehicle.setCategory(String.valueOf(categoryBox.getValue()));
-                        vehicle.setLicensePlate(licensePlate.getText());
-                        vehicle.setAvailableFrom(stringReadyFrom);
-                        vehicle.setAvailableTill(stringReadyTill);
-                        vehicle.setStatus(String.valueOf(statusBox.getValue()));
+                    Vehicle vehicle = new Vehicle();
 
-                        try {
-                            objectMapper.writeValue(
-                                    new FileOutputStream("C:/Users/User/Documents/Schule/Projekt Modul 326/Fahzeugverwaltung/src/main/java/application/classes/vehicleList.json"), vehicle);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
 
+                    String ccmString = ccm.getText();
+                    String mileageString = mileage.getText();
+
+                    int ccmConverted = Integer.parseInt(ccmString);
+                    int mileageConverted = Integer.parseInt(mileageString);
+                    vehicle.setVehicleBrand(vehicleBrand.getText());
+                    vehicle.setModel(model.getText());
+                    vehicle.setCcm(ccmConverted);
+                    vehicle.setFuelType(String.valueOf(fuelTypeBox.getValue()));
+                    vehicle.setColor(color.getText());
+                    vehicle.setMileage(mileageConverted);
+                    vehicle.setCategory(String.valueOf(categoryBox.getValue()));
+                    vehicle.setLicensePlate(licensePlate.getText());
+                    //vehicle.setAvailableFrom(stringReadyFrom);
+                    //vehicle.setAvailableTill(stringReadyTill);
+                    vehicle.setStatus(String.valueOf(statusBox.getValue()));
+
+                    list.addVehicles(vehicle);
+
+                    try {
+                        JsonGenerator file = objectMapper.getFactory().createGenerator(new FileOutputStream(pathToFile));
+                        objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, list);
+                        file.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
+
                 }
-            });
+            }
+        });
         //clears input fields
         clear.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {

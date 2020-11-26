@@ -1,6 +1,7 @@
 package application.classes;
 
 public class Vehicle {
+    private int id;
     private String vehicleBrand;
     private String model;
     private int ccm;
@@ -13,6 +14,13 @@ public class Vehicle {
     private String availableFrom;
     private String availableTill;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getVehicleBrand() {
         return vehicleBrand;
