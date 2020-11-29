@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #4a4a4a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ViewController">
+    <children>
+        <Pane prefHeight="105.0" prefWidth="600.0" style="-fx-background-color: #f77777;">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="30.0" prefHeight="46.0" prefWidth="195.0" text="Fahrzeugverwaltung">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutX="216.0" layoutY="118.0" orientation="VERTICAL" prefHeight="342.0" prefWidth="168.0" vgap="15.0">
+         <children>
+              <JFXButton fx:id="vehicleRegisterButton" onAction="#handleButtonAction" prefHeight="25.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Fahrzeug registrieren" textFill="WHITE" />
+              <JFXButton fx:id="customerRegisterButton" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="128.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Kunden registrieren" textFill="WHITE" />
+              <JFXButton fx:id="rentalButton" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="128.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Fahrzeugmiete" textFill="WHITE" />
+              <JFXButton fx:id="vehicleListButton" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="128.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Fahrzeugliste" textFill="WHITE" />
+            <JFXButton fx:id="customerListButton" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="128.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Kundenliste" textFill="WHITE" />
+            <JFXButton fx:id="rentalListButton" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="128.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Vermietungsliste" textFill="WHITE" />
+         </children>
+      </FlowPane>
+    </children>
+</AnchorPane>

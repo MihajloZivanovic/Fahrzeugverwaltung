@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #4a4a4a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.register.RegisterTransporter">
+    <children>
+        <FlowPane alignment="CENTER" prefHeight="57.0" prefWidth="600.0" style="-fx-background-color: #f77777;">
+            <children>
+                <GridPane prefHeight="30.0" prefWidth="569.0" style="-fx-border-color: black; -fx-grid-lines-visible: true;">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <JFXButton fx:id="vehicleRegisterButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Fahrzeugregistration" />
+                        <JFXButton fx:id="customerRegisterButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Kundenregistration" GridPane.columnIndex="1" />
+                        <JFXButton fx:id="vehicleListButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Fahrzeugliste" GridPane.columnIndex="2" />
+                        <JFXButton fx:id="rentalButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Vermietungen" GridPane.columnIndex="4" />
+                        <JFXButton fx:id="rentalListButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Vermietungsliste" GridPane.columnIndex="5" />
+                        <JFXButton fx:id="customerListButton" contentDisplay="CENTER" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="150.0" ripplerFill="#8c8c8c" text="Kundenliste" GridPane.columnIndex="3" />
+                    </children>
+                </GridPane>
+            </children>
+        </FlowPane>
+        <Label layoutX="14.0" layoutY="66.0" prefHeight="32.0" prefWidth="239.0" text="Transporter registrieren" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="save" contentDisplay="CENTER" layoutX="468.0" layoutY="342.0" prefHeight="32.0" prefWidth="92.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Speichern" textFill="WHITE" />
+        <Label fx:id="errorMessage" alignment="TOP_LEFT" layoutX="23.0" layoutY="461.0" prefHeight="26.0" prefWidth="295.0" text="errorMessage" textFill="RED" visible="false">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="clear" contentDisplay="CENTER" layoutX="468.0" layoutY="386.0" prefHeight="32.0" prefWidth="92.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="Clear" textFill="WHITE" />
+        <GridPane layoutX="23.0" layoutY="104.0" prefHeight="338.0" prefWidth="436.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="0.0" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="26.0" prefWidth="128.0" text="Marke" textFill="WHITE" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Modell" textFill="WHITE" GridPane.rowIndex="1" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Hubraum (ccm)" textFill="WHITE" GridPane.rowIndex="2" />
+                <Label prefHeight="26.0" prefWidth="100.0" text="Treibstoffart" textFill="WHITE" GridPane.rowIndex="3" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Aussenfarbe" textFill="WHITE" GridPane.rowIndex="4" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Km-Stand" textFill="WHITE" GridPane.rowIndex="5" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Kennzeichen" textFill="WHITE" GridPane.rowIndex="6" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Kategorie" textFill="WHITE" GridPane.rowIndex="7" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Verfügbar ab" textFill="WHITE" GridPane.rowIndex="8" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Verfügbar bis" textFill="WHITE" GridPane.rowIndex="9" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Status" textFill="WHITE" GridPane.rowIndex="10" />
+                <TextField fx:id="vehicleBrand" GridPane.columnIndex="1" />
+                <TextField fx:id="model" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="ccm" prefHeight="25.0" prefWidth="141.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ChoiceBox fx:id="fuelTypeBox" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="color" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="mileage" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="licensePlate" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <ChoiceBox fx:id="categoryBox" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <ChoiceBox fx:id="statusBox" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <TextField fx:id="readyFrom" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="readyTill" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label prefHeight="26.0" prefWidth="128.0" text="Ladegewicht" textFill="WHITE" GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="loadWeight" GridPane.columnIndex="3" />
+            </children>
+        </GridPane>
+        <JFXButton fx:id="homeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="528.0" layoutY="67.0" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="58.0" ripplerFill="#f77777" style="-fx-background-color: #2e2e2e;" text="home" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>
